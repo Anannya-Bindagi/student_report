@@ -1,7 +1,10 @@
-FROM python:3.11
+FROM python:3.11-slim
 
-WORKDIR /se
+WORKDIR /stud_record
 
-COPY . .
+COPY student.py .
+COPY test_student.py .
 
-CMD ["python", "student.py"]
+RUN pip install --no-cache-dir pytest
+
+CMD ["bash"]
